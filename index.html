@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tailscale 安裝闖關｜才庫內網 AI 通行證</title>
+<meta name="description" content="六關互動教學，一步步帶你完成 Tailscale 下載、註冊、串接才庫內網伺服器。" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- 背景特效層 -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+<div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<main class="wrap">
+
+  <!-- 頁首 -->
+  <header class="hero">
+    <div class="logo-dots" aria-hidden="true">
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+    <h1 class="hero-title">Tailscale 安裝闖關</h1>
+    <p class="hero-sub">六關全破，解鎖才庫內網 AI 工具的通行證</p>
+
+    <div class="progress-wrap" role="group" aria-label="闖關進度">
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-meta">
+        <span id="progressText">0 / 6 關完成</span>
+        <button class="reset-btn" id="resetBtn" type="button">重新開始</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 關卡容器 -->
+  <div class="levels" id="levels">
+
+    <!-- 關卡 1：任務簡報 -->
+    <section class="level is-open" data-level="1" data-state="active" id="level-1">
+      <button class="level-head" type="button" aria-expanded="true" aria-controls="body-1">
+        <span class="level-badge"><span class="badge-num">1</span><svg class="badge-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+        <span class="level-title-group">
+          <span class="level-kicker">關卡一・任務簡報</span>
+          <span class="level-title">為什麼要裝 Tailscale</span>
+        </span>
+        <span class="level-status" aria-hidden="true"></span>
+      </button>
+      <div class="level-body" id="body-1">
+        <div class="level-desc">
+          <p class="reveal">企業內部要用 AI 工具，第一步是<strong>資安意識</strong>，第二步是<strong>帳號權限管理</strong>。少了任何一個，內部資料都可能外洩。</p>
+          <p class="reveal">Tailscale 的免費版把這兩件事一次解決：它建立一條只有授權帳號能進入的私有網路，讓你安全連上才庫內網伺服器。這是目前最快速的做法。</p>
+          <p class="reveal">接下來六關，會一步步帶你從下載安裝，到成功接上內網伺服器。準備好就出發。</p>
+        </div>
+        <div class="level-actions">
+          <button class="btn btn-primary complete-btn" type="button">我了解了，出發闖關 →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 關卡 2：下載安裝 -->
+    <section class="level" data-level="2" data-state="locked" id="level-2">
+      <button class="level-head" type="button" aria-expanded="false" aria-controls="body-2">
+        <span class="level-badge"><span class="badge-num">2</span><svg class="badge-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+        <span class="level-title-group">
+          <span class="level-kicker">關卡二・下載安裝</span>
+          <span class="level-title">下載並安裝 Tailscale</span>
+        </span>
+        <span class="level-status" aria-hidden="true"></span>
+      </button>
+      <div class="level-body" id="body-2">
+        <div class="level-desc">
+          <p class="reveal">打開官方下載頁，選你的作業系統（這裡以 Windows 為例）。</p>
+          <p class="reveal">按下白色的「Download Tailscale for Windows」，執行下載的安裝檔，一路點下一步到底。</p>
+          <p class="reveal">安裝完成後，工作列右下角會出現 Tailscale 的小圖示，代表軟體已就緒。</p>
+        </div>
+
+        <!-- 下載頁擬真畫面 -->
+        <figure class="level-visual">
+          <div class="mock-browser">
+            <div class="mock-bar">
+              <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+              <span class="mock-url">tailscale.com/download</span>
+            </div>
+            <div class="mock-download">
+              <div class="mock-dl-title">Download</div>
+              <div class="mock-dl-sub">Install the app and sign in to get started.</div>
+              <div class="os-row">
+                <div class="os-card">
+                  <svg class="os-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 8.9 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.38 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                  <span>macOS</span>
+                </div>
+                <div class="os-card">
+                  <svg class="os-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 8.9 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.38 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                  <span>iOS</span>
+                </div>
+                <div class="os-card os-card-active">
+                  <svg class="os-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.4l7.5-1v7.1H3zM3 12.5h7.5v7.1L3 18.6zM11.4 4.3L21 3v8.5h-9.6zM11.4 12.5H21V21l-9.6-1.3z"/></svg>
+                  <span>Windows</span>
+                </div>
+                <div class="os-card">
+                  <svg class="os-ico os-ico-term" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="16" rx="2"/><path class="term-glyph" d="M6 9l3 3-3 3M12 15h4"/></svg>
+                  <span>Linux</span>
+                </div>
+                <div class="os-card">
+                  <svg class="os-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9a5 5 0 0110 0v6a1 1 0 01-1 1H8a1 1 0 01-1-1zm2.2-4.2L8 3.4m6.8 1.4L16 3.4M10 12v0m4 0v0"/><circle cx="10" cy="11.5" r="1"/><circle cx="14" cy="11.5" r="1"/></svg>
+                  <span>Android</span>
+                </div>
+              </div>
+              <button class="mock-dl-btn" type="button" tabindex="-1">Download Tailscale for Windows</button>
+              <div class="mock-dl-note">Requires Windows 10 or later.</div>
+              <!-- 動態箭頭：指向下載按鈕 -->
+              <div class="arrow arrow-down anno-win">
+                <span class="anno-label">按這裡下載</span>
+                <svg viewBox="0 0 40 60" aria-hidden="true"><path d="M20 4v44M8 36l12 14 12-14"/></svg>
+              </div>
+            </div>
+          </div>
+          <figcaption>官方下載頁：選 Windows 卡片（已反白），再按下方白色下載按鈕。</figcaption>
+        </figure>
+
+        <div class="level-actions">
+          <a class="btn btn-ghost" href="https://tailscale.com/download" target="_blank" rel="noopener">開啟下載頁 ↗</a>
+          <button class="btn btn-primary complete-btn" type="button">我已安裝完成 ✓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 關卡 3：Google 註冊登入（跳過陷阱） -->
+    <section class="level" data-level="3" data-state="locked" id="level-3">
+      <button class="level-head" type="button" aria-expanded="false" aria-controls="body-3">
+        <span class="level-badge"><span class="badge-num">3</span><svg class="badge-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+        <span class="level-title-group">
+          <span class="level-kicker">關卡三・註冊登入</span>
+          <span class="level-title">用 Google 帳號註冊登入</span>
+        </span>
+        <span class="level-status" aria-hidden="true"></span>
+      </button>
+      <div class="level-body" id="body-3">
+        <div class="level-desc">
+          <p class="reveal">安裝後開啟 Tailscale，選擇用 <strong>Google 帳號</strong>登入。記住這個 Email，下一關要用。</p>
+        </div>
+
+        <div class="callout callout-warn reveal">
+          <div class="callout-icon">⚠️</div>
+          <div class="callout-text">
+            <strong>陷阱提醒（管理員親身踩過的坑）</strong>
+            <p>登入後如果畫面變成左右兩半：左邊是一排作業系統圖示、右邊空白只有一個轉圈圈的小圓圈，<strong>別傻等</strong>。這個畫面只是再次提醒你安裝軟體，不是串接分享的頁面。把滑鼠<strong>滾輪滑到最下面</strong>，會看到一個「跳過（Skip）」按鈕，按下去就對了。</p>
+          </div>
+        </div>
+
+        <!-- 分割畫面擬真：跳過陷阱 -->
+        <figure class="level-visual">
+          <div class="mock-split">
+            <div class="split-left">
+              <div class="split-os"><span class="split-os-ico"></span>macOS</div>
+              <div class="split-os"><span class="split-os-ico"></span>Windows</div>
+              <div class="split-os"><span class="split-os-ico"></span>Linux</div>
+              <div class="split-os"><span class="split-os-ico"></span>iOS</div>
+              <div class="split-os"><span class="split-os-ico"></span>Android</div>
+            </div>
+            <div class="split-right">
+              <div class="split-spinner" aria-hidden="true"></div>
+              <div class="split-waiting">Waiting…</div>
+              <div class="split-skip">
+                <button class="split-skip-btn" type="button" tabindex="-1">跳過 Skip</button>
+              </div>
+              <!-- 動態箭頭：指向跳過鈕 -->
+              <div class="arrow arrow-down anno-skip">
+                <span class="anno-label">滑到最下面按這裡</span>
+                <svg viewBox="0 0 40 60" aria-hidden="true"><path d="M20 4v44M8 36l12 14 12-14"/></svg>
+              </div>
+            </div>
+          </div>
+          <figcaption>看到這個「左邊一排系統、右邊空轉」的畫面，滾到底按「跳過 Skip」即可。</figcaption>
+        </figure>
+
+        <div class="level-actions">
+          <button class="btn btn-primary complete-btn" type="button">我已登入（或已按跳過）✓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 關卡 4：填表單 -->
+    <section class="level" data-level="4" data-state="locked" id="level-4">
+      <button class="level-head" type="button" aria-expanded="false" aria-controls="body-4">
+        <span class="level-badge"><span class="badge-num">4</span><svg class="badge-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+        <span class="level-title-group">
+          <span class="level-kicker">關卡四・回報 Email</span>
+          <span class="level-title">把 Email 填進表單送出</span>
+        </span>
+        <span class="level-status" aria-hidden="true"></span>
+      </button>
+      <div class="level-body" id="body-4">
+        <div class="level-desc">
+          <p class="reveal">把你剛剛註冊登入用的那個 <strong>Google 帳號 Email</strong>，填到回報表單裡送出。</p>
+          <p class="reveal">這一步是讓管理員知道要把內網權限分享給哪個帳號。Email 一定要跟你登入 Tailscale 的完全一致，不然會收不到邀請。</p>
+        </div>
+        <div class="level-actions">
+          <a class="btn btn-ghost" href="https://forms.gle/SAP9xZAwfDnMyyrh9" target="_blank" rel="noopener">開啟回報表單 ↗</a>
+          <button class="btn btn-primary complete-btn" type="button">我已送出表單 ✓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 關卡 5：接受裝置邀請 -->
+    <section class="level" data-level="5" data-state="locked" id="level-5">
+      <button class="level-head" type="button" aria-expanded="false" aria-controls="body-5">
+        <span class="level-badge"><span class="badge-num">5</span><svg class="badge-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+        <span class="level-title-group">
+          <span class="level-kicker">關卡五・接受邀請</span>
+          <span class="level-title">接受內網裝置邀請</span>
+        </span>
+        <span class="level-status" aria-hidden="true"></span>
+      </button>
+      <div class="level-body" id="body-5">
+        <div class="level-desc">
+          <p class="reveal">管理員（360d才庫情報站）會在<strong>今天上午 11:00</strong>，把內網伺服器的讀取權限分享給你填的 Email。</p>
+          <p class="reveal">時間到之後，你的信箱會收到一封標題為「360d才庫情報站 shared a device with you over Tailscale」的信。點信裡<strong>藍底白字的「Accept device invite」</strong>，進到頁面後再按一次確認。</p>
+          <p class="reveal callout-inline">小提醒：11:00 前信還沒到是正常的，時間到再回來收信就好。</p>
+        </div>
+
+        <figure class="level-visual">
+          <div class="shot-frame">
+            <img src="assets/img/email-invite.png" alt="Tailscale 寄來的裝置分享邀請信，中間有藍底白字的 Accept device invite 按鈕" loading="lazy" />
+            <div class="hotspot anno-invite" aria-hidden="true">
+              <span class="hotspot-label">點這顆藍色鈕</span>
+            </div>
+          </div>
+          <figcaption>信件實際長相：找到藍色「Accept device invite」按下去。</figcaption>
+        </figure>
+
+        <div class="level-actions">
+          <button class="btn btn-primary complete-btn" type="button">我已接受邀請 ✓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 關卡 6：記事本回報 -->
+    <section class="level" data-level="6" data-state="locked" id="level-6">
+      <button class="level-head" type="button" aria-expanded="false" aria-controls="body-6">
+        <span class="level-badge"><span class="badge-num">6</span><svg class="badge-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+        <span class="level-title-group">
+          <span class="level-kicker">關卡六・完成回報</span>
+          <span class="level-title">在記事本回報「已完成」</span>
+        </span>
+        <span class="level-status" aria-hidden="true"></span>
+      </button>
+      <div class="level-body" id="body-6">
+        <div class="level-desc">
+          <p class="reveal">接受邀請後，頁面上會看到管理員分享給你的裝置，像下圖這樣，標著「Shared in」。</p>
+          <p class="reveal">看到之後，到「才庫大家庭記事本」的『Tailscale 軟體安裝回報』下方，留言<strong>「已完成」</strong>。這樣管理員就知道你整套都設定好了。</p>
+        </div>
+
+        <figure class="level-visual">
+          <div class="arrow arrow-down anno-shared">
+            <span class="anno-label">看到這個就對了</span>
+            <svg viewBox="0 0 40 60" aria-hidden="true"><path d="M20 4v44M8 36l12 14 12-14"/></svg>
+          </div>
+          <div class="shot-frame shot-frame-sm">
+            <img src="assets/img/shared-device.png" alt="Tailscale 主控台顯示已分享的裝置 360dai，帶有 Shared in 標籤" loading="lazy" />
+          </div>
+          <figcaption>看到「Shared in」標籤，代表內網裝置已成功分享給你。</figcaption>
+        </figure>
+
+        <div class="level-actions">
+          <button class="btn btn-primary complete-btn" type="button">我已回報完成 ✓</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 通關畫面 -->
+  <section class="finale" id="finale" hidden>
+    <div class="finale-badge">🎉</div>
+    <h2 class="finale-title">恭喜！六關全破</h2>
+    <p class="finale-sub">你已經完成 Tailscale 安裝與內網串接，正式拿到才庫 AI 工具的通行證。有問題隨時在記事本敲一聲。</p>
+    <button class="btn btn-ghost" id="replayBtn" type="button">從頭再看一次</button>
+  </section>
+
+  <footer class="site-foot">
+    <span class="foot-credit">製作者：黃政文</span>
+  </footer>
+
+</main>
+
+<script src="assets/js/game.js" defer></script>
+</body>
+</html>
